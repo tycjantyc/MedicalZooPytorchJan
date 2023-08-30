@@ -59,7 +59,7 @@ class Pioro3DDataset(Dataset):
         
         image, mask = nib.load(img_path), nib.load(mask_path)
         image, mask = np.array(image.dataobj), np.array(mask.dataobj)
-        #image, mask = image.astype(np.float32), mask.astype(np.float32)
+        image, mask = image.astype(np.float32), mask.astype(np.float32)
         
 
         return torch.FloatTensor(image), torch.FloatTensor(mask)
