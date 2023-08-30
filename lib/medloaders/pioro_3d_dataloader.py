@@ -59,6 +59,18 @@ class Pioro3DDataset(Dataset):
         
         image, mask = nib.load(img_path), nib.load(mask_path)
         image, mask = np.array(image.dataobj), np.array(mask.dataobj)
+
+        dim = image.shape[2]
+        print(mask.shape[2])
+        if(dim > 177):
+            image = image[:,:,:177]
+            mask  =  mask[:,:,:177]
+        print(image.shape)
+        print(mask.shape)
+        if(mask.shape[2] == 363):
+          mask = mask[:, :, :177]
+          print("got it")
+        
         image, mask = image.astype(np.float32), mask.astype(np.float32)
         
 
