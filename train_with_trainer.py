@@ -25,22 +25,13 @@ def main():
 
     lista = np.zeros(args.classes)
     print("STARTING COMPUTING WEIGHTS")
-    for img, targ in training_generator:
-        for index, (image, target) in enumerate(zip(img, targ)):
-            target = target[0]
-            y, x = target.shape
-            for i in range(y):
-                for j in range(x):
-                    lista[target[i][j]] += 1
     
-    lista_inv = [1/i for i in lista]
-    lista_inv = lista_inv/sum(lista_inv)
     print("ENDED COMPUTING WEIGHTS")
 
 
     model, optimizer = medzoo.create_model(args)
     criterion = create_loss('CrossEntropyLoss')
-    criterion = DiceLoss(classes=args.classes, weight=torch.tensor(lista_inv).cuda())
+    criterion = DiceLoss(classes=args.classes, weight=torch.tensor([1, 1, 1, 1, 1]).cuda())
 
     if args.cuda:
         model = model.cuda()
