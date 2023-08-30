@@ -11,6 +11,8 @@ from .iseg2019 import MRIDatasetISEG2019
 from .ixi_t1_t2 import IXIMRIdataset
 from .miccai_2019_pathology import MICCAI2019_gleason_pathology
 from .mrbrains2018 import MRIDatasetMRBRAINS2018
+from .pioro_dataloader import PioroCTDataset
+from .pioro_3d_dataloader import Pioro3DDataset
 
 
 def generate_datasets(args, path='.././datasets'):
