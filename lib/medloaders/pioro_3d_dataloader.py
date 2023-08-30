@@ -17,8 +17,8 @@ import nibabel as nib
 class Pioro3DDataset(Dataset):
     def __init__(self,mode, split):
         
-        self.path_files = "../data/ct_train/images"
-        self.path_maski = "../data/ct_train/labels"
+        self.path_files = "../drive/MyDrive/Dane3DHeartCT/images"
+        self.path_maski = "../drive/MyDrive/Dane3DHeartCT/labels"
         self.full_volume = None
         self.transform = None
         
