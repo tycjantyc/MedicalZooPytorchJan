@@ -123,6 +123,14 @@ def generate_datasets(args, path='.././datasets'):
 
         val_loader = COVID_Seg_Dataset(mode='val', dataset_path=path, crop_dim=args.dim,
                                        fold=0, samples=samples_val)
+     elif args.dataset_name == "pioro":
+        train_loader = PioroCTDataset(mode="train", split=0.8)
+
+        val_loader = PioroCTDataset(mode="test", split=0.8)
+    elif args.dataset_name == "pioro3d":
+        train_loader = Pioro3DDataset(mode="train", split=0.8)
+
+        val_loader = Pioro3DDataset(mode="test", split=0.8)
     training_generator = DataLoader(train_loader, **params)
     val_generator = DataLoader(val_loader, **params)
 
