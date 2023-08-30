@@ -13,7 +13,9 @@ dict_class_names = {"iseg2017": ["Air", "CSF", "GM", "WM"],
                     "brats2019": ["Background", "NCR", "ED", "NET", "ET"],
                     "brats2020": ["Background", "NCR/NET", "ED", "ET"],
                     "covid_seg": ["c1", "c2", "c3"],
-                    "miccai2019": ["c1", "c2", "c3", "c4", "c5", "c6", "c7"]
+                    "miccai2019": ["c1", "c2", "c3", "c4", "c5", "c6", "c7"],
+                    "pioro": ["c0", "c1","c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11", "c12","c13"],
+                    "pioro3d" : ["c0", "c1", "c2", "c3", "c4"]
                     }
 
 
